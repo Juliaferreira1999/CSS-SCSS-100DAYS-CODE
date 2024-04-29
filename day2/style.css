@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: pink;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamburger {
+  position: absolute;
+  width: 80px;
+  height: 8px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+.hamburger-checkbox {
+  width: 80px;
+  height: 60px;
+  appearance: none;
+  display: block;
+  cursor: pointer;
+}
+.hamburger-checkbox:checked ~ .hamburger-one {
+  animation: animate-one-in 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards alternate;
+}
+.hamburger-checkbox:checked ~ .hamburger-two {
+  animation: animate-two-in 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+.hamburger-checkbox:checked ~ .hamburger-three {
+  animation: animate-three-in 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+.hamburger-one {
+  top: 0;
+  animation: animate-one-out 0.7s ease-in-out forwards;
+}
+.hamburger-two {
+  top: 25px;
+  animation: animate-two-out 0.7s ease-in-out forwards;
+}
+.hamburger-three {
+  top: 50px;
+  animation: animate-three-out 0.7s ease-in-out forwards;
+}
+
+@keyframes animate-one-in {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(25px) rotate(135deg);
+  }
+}
+@keyframes animate-one-out {
+  0% {
+    transform: translateY(25px) rotate(135deg);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes animate-two-in {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes animate-two-out {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes animate-three-in {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(-25px) rotate(45deg);
+  }
+}
+@keyframes animate-three-out {
+  0% {
+    transform: translateY(-25px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

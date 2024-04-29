@@ -1,0 +1,245 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  gap: 2px;
+}
+
+.prevImage {
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  position: relative;
+}
+.prevImage:hover .btnImg {
+  transform: scale(1);
+  opacity: 1;
+  transition: 500ms;
+}
+
+.prevImage::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.prevImage:hover::before {
+  background-color: rgba(0, 0, 0, 0.3333333333);
+  transition: 500ms;
+}
+
+.btnImg {
+  width: 40px;
+  height: 40px;
+  background-color: #e54;
+  border-radius: 50%;
+  margin: auto;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  transform: scale(1.5);
+  opacity: 0;
+  transition: 500ms;
+}
+.btnImg:hover {
+  color: #e54;
+  background-color: #fff;
+  transition: 500ms;
+}
+
+.btnImg i {
+  margin: auto;
+  font-size: 15px;
+}
+
+.image1 {
+  background-image: url("https://100dayscss.com/codepen/13-1.jpg");
+}
+
+.image2 {
+  background-image: url("https://100dayscss.com/codepen/13-2.jpg");
+}
+
+.image3 {
+  background-image: url("https://100dayscss.com/codepen/13-3.jpg");
+}
+
+.image4 {
+  background-image: url("https://100dayscss.com/codepen/13-4.jpg");
+}
+
+.slideSup {
+  width: 100%;
+  height: 50%;
+  background-color: #333;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.btn-close {
+  width: 40px;
+  height: 40px;
+  background-color: #e33;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+}
+.btn-close:hover {
+  background-color: #fff;
+  color: #333;
+  transition: 500ms;
+}
+
+.btn-close i {
+  margin: auto;
+  font-size: 16px;
+}
+
+.img-menu {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff;
+  position: relative;
+  top: 50px;
+}
+
+.slideInf {
+  width: 100%;
+  height: 50%;
+  background-color: #e33;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.text-menu {
+  color: #fff;
+  margin-top: 20px;
+}
+
+.btn-menu-cont {
+  display: flex;
+  gap: 40px;
+}
+
+.btn-menu-cont div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: flex;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-menu-cont div:hover {
+  color: #e33;
+  background-color: #fff;
+  transition: 500ms;
+}
+
+.btn-menu-cont div i {
+  margin: auto;
+}
+
+.like {
+  animation-name: like;
+  animation-duration: 800ms;
+  animation-fill-mode: backwards;
+}
+
+@keyframes like {
+  10% {
+    transform: rotateY(190deg);
+  }
+  50% {
+    transform: rotateY(-180deg) scale(1.5);
+  }
+  90% {
+    transform: rotateY(180deg);
+  }
+}
+.slideSup {
+  top: -70%;
+  transition: 1s;
+}
+
+.slideInf {
+  bottom: -50%;
+  transition: 1s;
+}
+
+.viewSup {
+  top: 0;
+  transition: 1s;
+}
+
+.viewInf {
+  bottom: 0;
+  transition: 1s;
+}
+
+.view-btnClose {
+  animation-name: view-btnClose;
+  animation-duration: 1500ms;
+  animation-fill-mode: both;
+}
+
+.view-imgMenu {
+  animation-name: view-imgMenu;
+  animation-duration: 1200ms;
+  animation-fill-mode: both;
+}
+
+@keyframes view-btnClose {
+  0%, 50% {
+    top: -80px;
+  }
+  100% {
+    top: 10px;
+  }
+}
+@keyframes view-imgMenu {
+  0%, 30% {
+    top: -40px;
+  }
+  100% {
+    top: 50px;
+  }
+}
